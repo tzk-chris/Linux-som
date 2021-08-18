@@ -59,11 +59,11 @@ service mysqld start
 # 创建软链接（目的就是为了能够在全局使用mysql命令）
 ln -s /usr/local/mysql/bin/mysql  /usr/local/bin
 
-# 修改密
+# �修改密码
 # 1、修改/usr/local/mysql/etc/my.cnf 配置文件，找到[mysqld]在之后添加：skip-grant-tables。然后保存并退出。
 # 2、重启mysql：service mysqld  restart
 # 3、mysql -u root -p免密登录
-# 4、使用：update mysql.user e tauthentication_string=password('123456') where user='root';修改密码
+# 4、使用：update mysql.user set authentication_string=password('123456') where user='root';修改密码
 # 5、命令：flush privileges刷新
 # 6、退出mysql，并进入my.cnf文件删除skip-grant-tables命令。
-# 7、重启使用新密码登录mysql即可。码
+# 7、重启使用新密码登录mysql即可�
